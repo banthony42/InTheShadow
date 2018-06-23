@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114307439792517240}
   - component: {fileID: 114880199954342124}
   m_Layer: 5
-  m_Name: MenuButtonText
+  m_Name: ClassicModeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: c8516dce9a3ce47adb9ba6ad74a35842, type: 3}
+  m_Color: {r: 0.78039217, g: 0.78039217, b: 0.78039217, a: 0.7058824}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -85,16 +85,16 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: daeeb3444125148628c00af8ef2530c7, type: 3}
-    m_FontSize: 32
+    m_Font: {fileID: 12800000, guid: c8516dce9a3ce47adb9ba6ad74a35842, type: 3}
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 56
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Classic mode
@@ -206,8 +206,8 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.36563534, y: 0.51855123}
-  m_AnchorMax: {x: 0.62709266, y: 0.614587}
+  m_AnchorMin: {x: 0.32290047, y: 0.43443793}
+  m_AnchorMax: {x: 0.6871883, y: 0.60212266}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -224,8 +224,8 @@ RectTransform:
   m_Father: {fileID: 224025305702300828}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: -0.021039128, y: 0}
+  m_AnchorMax: {x: 1, y: 1.1241843}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
