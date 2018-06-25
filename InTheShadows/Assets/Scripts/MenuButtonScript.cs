@@ -31,7 +31,6 @@ public class MenuButtonScript : MonoBehaviour {
         {
             sceneToLoad = "LevelSelect";
             fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
-            fade.GetComponent<UnityEngine.UI.RawImage>().color = new Color(0.101f, 0f, 0f, 0f);
             fade.GetComponent<FadeScript>().target = Color.black;
             fade.GetComponent<FadeScript>().timer = 0f;
         }
