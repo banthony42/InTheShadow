@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MenuButtonScript : MonoBehaviour {
 
+    public GameObject fade;
     public AudioClip buttonClic;
     public AudioClip buttonTransition;
 
@@ -18,8 +19,7 @@ public class MenuButtonScript : MonoBehaviour {
 	
     public void pointerEnter()
     {
-        Debug.Log("test");
-        soundPlayer.PlayOneShot(buttonTransition);
+       soundPlayer.PlayOneShot(buttonTransition);
     }
 
     public void onClickButton(string button)
@@ -28,7 +28,13 @@ public class MenuButtonScript : MonoBehaviour {
         soundPlayer.clip = buttonClic;
         soundPlayer.Play();
         if (button == "classic" || button == "test")
+        {
             sceneToLoad = "LevelSelect";
+            fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
+            fade.GetComponent<UnityEngine.UI.RawImage>().color = new Color(0.101f, 0f, 0f, 0f);
+            fade.GetComponent<FadeScript>().target = Color.black;
+            fade.GetComponent<FadeScript>().timer = 0f;
+        }
     }
 
 	// Update is called once per frame
@@ -36,7 +42,6 @@ public class MenuButtonScript : MonoBehaviour {
         if (sceneToLoad != "none" && soundPlayer.time > 1.3f)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
-            sceneToLoad = "none";
         }
 	}
 }

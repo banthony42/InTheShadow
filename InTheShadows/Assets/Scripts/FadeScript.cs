@@ -5,7 +5,8 @@ using UnityEngine;
 public class FadeScript : MonoBehaviour {
     public float fadeTime;
 
-    private float timer = 0f;
+    [HideInInspector] public float timer = 0f;
+    [HideInInspector] public Color target = Color.clear;
     private UnityEngine.UI.RawImage rawImage;
 	// Use this for initialization
 	void Start () {
@@ -14,12 +15,12 @@ public class FadeScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        rawImage.color = Color.Lerp(rawImage.color, Color.clear, timer);
+        rawImage.color = Color.Lerp(rawImage.color, target, timer);
         if (timer < 1)
         {
             timer += Time.deltaTime / fadeTime;
         }
-        if (rawImage.color == Color.clear)
-            gameObject.SetActive(false);
+        if (rawImage.color.a < 0.1f)
+            rawImage.raycastTarget = false;
 	}
 }

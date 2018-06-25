@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dc7ba08be80492da1b62bd7ad8e5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fade: {fileID: 1812721711002416, guid: 2519038ad064346f89e186ac7c663934, type: 2}
   buttonClic: {fileID: 8300000, guid: 12196e2a690324e50ae1cca6c4092bbc, type: 3}
   buttonTransition: {fileID: 8300000, guid: 86f0e077dc2014217a98fa474a07aba1, type: 3}
 --- !u!114 &114880199954342124
