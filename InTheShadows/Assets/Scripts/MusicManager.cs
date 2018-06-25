@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class GameManager : MonoBehaviour
+public class MusicManager : MonoBehaviour
 {
-    public static GameManager instance = null;
+    public static MusicManager instance = null;
 
     void Awake()
     {
