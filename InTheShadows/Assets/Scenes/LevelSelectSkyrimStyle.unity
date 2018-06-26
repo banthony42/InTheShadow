@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.027973788, g: 0.19755244, b: 0.3623153, a: 1}
+  m_IndirectSpecularColor: {r: 0.027132107, g: 0.19728449, b: 0.36218318, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -434,6 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986546fbaa200cd41b61b0ac14b38ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: []
+  levelSwhitchSound: {fileID: 0}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -4403,6 +4405,10 @@ Prefab:
         type: 2}
       propertyPath: fadeTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1812721711002416, guid: 2519038ad064346f89e186ac7c663934, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2519038ad064346f89e186ac7c663934, type: 2}
