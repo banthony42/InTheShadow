@@ -3,9 +3,9 @@
     <Files>
       <File FileName="Assets/Scripts/SpotMovement.cs" Line="6" Column="5" />
       <File FileName="Assets/Scripts/FadeScript.cs" Line="27" Column="47" />
-      <File FileName="Assets/Scripts/MenuButtonScript.cs" Line="35" Column="40" />
-      <File FileName="Assets/Scripts/CameraSelectLevelScript.cs" Line="57" Column="40" />
-      <File FileName="Assets/Scripts/LevelScript.cs" Line="8" Column="27" />
+      <File FileName="Assets/Scripts/MenuButtonScript.cs" Line="28" Column="6" />
+      <File FileName="Assets/Scripts/CameraSelectLevelScript.cs" Line="76" Column="86" />
+      <File FileName="Assets/Scripts/LevelScript.cs" Line="9" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -73,6 +73,7 @@ public class CameraSelectLevelScript : MonoBehaviour
                         fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
                         fade.GetComponent<FadeScript>().target = Color.black;
                         fade.GetComponent<FadeScript>().timer = 0f;
+                        hit.collider.GetComponent<Animator>().SetTrigger("levelSelect");
                         sceneToLoad = "Menu";
                     }
                 }
