@@ -50,9 +50,9 @@ public class CameraSelectLevelScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-            LevelScript tmp = level[indexLevel].GetComponent<LevelScript>();
-            if (indexLevel >= 0 && !tmp.unlocked)
-                tmp.unlocked = true;
+//            LevelScript tmp = level[indexLevel].GetComponent<LevelScript>();
+//            if (indexLevel >= 0 && !tmp.unlocked)
+//                tmp.unlocked = true;
         }
 
         // Clic Handler on a level

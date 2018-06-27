@@ -19,7 +19,8 @@ public class LevelScript : MonoBehaviour {
         if (myParticleLink)
         {
             myParticle = myParticleLink.GetComponent<ParticleSystem>();
-            savedColor = myParticle.startColor;
+            ParticleSystem.MainModule psmain = myParticle.main;
+            savedColor = psmain.startColor.color;
         }
 	}
 	
@@ -34,7 +35,10 @@ public class LevelScript : MonoBehaviour {
             StopCoroutine("ParticleColorChange");
             myAnim.Play("Box_Idle");
             if (myParticleLink)
-                myParticle.startColor = savedColor;
+            {
+                ParticleSystem.MainModule psmain = myParticle.main;
+                psmain.startColor = savedColor;
+            }
         }
 
         if (unlocked)
@@ -52,7 +56,8 @@ public class LevelScript : MonoBehaviour {
     IEnumerator ParticleColorChange()
     {
         yield return new WaitForSeconds(2f);
-        myParticle.startColor = Color.Lerp(myParticle.startColor, unlockColor, Time.deltaTime);
+        ParticleSystem.MainModule psmain = myParticle.main;
+        psmain.startColor = Color.Lerp(psmain.startColor.color, unlockColor, Time.deltaTime);
     }
 }
 
