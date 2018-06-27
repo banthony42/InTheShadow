@@ -48,6 +48,13 @@ public class CameraSelectLevelScript : MonoBehaviour
         if (Input.GetKeyDown("escape"))
             UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
 
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            LevelScript tmp = level[indexLevel].GetComponent<LevelScript>();
+            if (indexLevel >= 0 && !tmp.unlocked)
+                tmp.unlocked = true;
+        }
+
         // Clic Handler on a level
         if (Input.GetMouseButtonDown(0))
         {
@@ -73,6 +80,7 @@ public class CameraSelectLevelScript : MonoBehaviour
                         fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
                         fade.GetComponent<FadeScript>().target = Color.black;
                         fade.GetComponent<FadeScript>().timer = 0f;
+                        hit.collider.GetComponent<Animator>().SetBool("levelUnlocked", false);
                         hit.collider.GetComponent<Animator>().SetTrigger("levelSelect");
                         sceneToLoad = "Menu";
                     }
