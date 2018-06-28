@@ -8,15 +8,11 @@ public class LevelScript : MonoBehaviour {
     public string levelName;
     public int levelIndex;
     public Color unlockColor;
-    public List<GameObject> levelTextures;
 
     private ParticleSystem myParticle;
     private Animator myAnim;
     private Color savedColor;
     private bool hold = false;
-
-    private int Lock = 0;
-    private int Unlock = 1;
 
 	// Use this for initialization
 	void Start () {
