@@ -22,25 +22,26 @@ public class UserSave : MonoBehaviour {
     void Start () {
         LoadUserPref();
 	}
-	
+
     // Charge les player pref dans les variables
     public void LoadUserPref()
-    {   
-        teapotUnlock = PlayerPrefs.GetInt("teapot");
-        elephantUnlock = PlayerPrefs.GetInt("elephant");
-        sombreroUnlock = PlayerPrefs.GetInt("sombrero");
-        fortyTwoUnlock = PlayerPrefs.GetInt("fortyTwo");
-        earthGlobeUnlock = PlayerPrefs.GetInt("earthGlobe");
+    {
+        teapotUnlock = PlayerPrefs.GetInt("T-Time");
+        elephantUnlock = PlayerPrefs.GetInt("Wild Trumpet");
+        sombreroUnlock = PlayerPrefs.GetInt("Aie, Pepito !");
+        fortyTwoUnlock = PlayerPrefs.GetInt("H2G2");
+        earthGlobeUnlock = PlayerPrefs.GetInt("Blue Planet");
     }
 
     // Reset le contenu des player pref
     // Puis charge le tout dans les variables
     public void ResetPref()
     {
-        PlayerPrefs.SetInt("teapot", 0);
-        PlayerPrefs.SetInt("elephant", 0);
-        PlayerPrefs.SetInt("sombrero", 0);
-        PlayerPrefs.SetInt("eartchGlobe", 0);
+        PlayerPrefs.SetInt("T-Time", 0);
+        PlayerPrefs.SetInt("Wild Trumpet", 0);
+        PlayerPrefs.SetInt("Aie, Pepito !", 0);
+        PlayerPrefs.SetInt("H2G2", 0);
+        PlayerPrefs.SetInt("Blue Planet", 0);
         LoadUserPref();
     }
 
@@ -48,10 +49,31 @@ public class UserSave : MonoBehaviour {
     // Puis sauvegarde les player pref
     public void UpdatePref()
     {
-        PlayerPrefs.SetInt("teapot", teapotUnlock);
-        PlayerPrefs.SetInt("elephant", elephantUnlock);
-        PlayerPrefs.SetInt("sombrero", sombreroUnlock);
-        PlayerPrefs.SetInt("eartchGlobe", earthGlobeUnlock);
+        PlayerPrefs.SetInt("T-Time", teapotUnlock);
+        PlayerPrefs.SetInt("Wild Trumpet", elephantUnlock);
+        PlayerPrefs.SetInt("Aie, Pepito !", sombreroUnlock);
+        PlayerPrefs.SetInt("H2G2", fortyTwoUnlock);
+        PlayerPrefs.SetInt("Blue Planet", earthGlobeUnlock);
         PlayerPrefs.Save();
+    }
+
+    public bool getState(string levelName)
+    {
+        return (PlayerPrefs.GetInt(levelName) > 0);
+    }
+
+    public void setState(string levelName, int state)
+    {
+        if (levelName == "T-Time")
+            teapotUnlock = state;
+        else if (levelName == "Wild Trumpet")
+            elephantUnlock = state;
+        else if (levelName == "Aie, Pepito !")
+            sombreroUnlock = state;
+        else if (levelName == "H2G2")
+            fortyTwoUnlock = state;
+        else if (levelName == "Blue Planet")
+            earthGlobeUnlock = state;
+        UpdatePref();
     }
 }

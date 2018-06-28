@@ -21,6 +21,7 @@ public class CameraSelectLevelScript : MonoBehaviour
     private int tmpIndex;
     private Camera myCam;
     private string sceneToLoad = "none";
+    private string saveTextChapter;
 
     // Use this for initialization
     void Start()
@@ -29,6 +30,7 @@ public class CameraSelectLevelScript : MonoBehaviour
         player = GetComponent<AudioSource>();
         startPosition = transform.position;
         cameraDestination = Vector3.zero;
+        saveTextChapter = UI_levelName.text;
     }
 
     // Update is called once per frame
@@ -50,9 +52,8 @@ public class CameraSelectLevelScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-//            LevelScript tmp = level[indexLevel].GetComponent<LevelScript>();
-//            if (indexLevel >= 0 && !tmp.unlocked)
-//                tmp.unlocked = true;
+            LevelScript tmp = level[indexLevel].GetComponent<LevelScript>();
+            UserSave.userP.setState(tmp.levelName, 1);
         }
 
         // Clic Handler on a level
@@ -80,7 +81,6 @@ public class CameraSelectLevelScript : MonoBehaviour
                         fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
                         fade.GetComponent<FadeScript>().target = Color.black;
                         fade.GetComponent<FadeScript>().timer = 0f;
-                        hit.collider.GetComponent<Animator>().SetBool("levelUnlocked", false);
                         hit.collider.GetComponent<Animator>().SetTrigger("levelSelect");
                         sceneToLoad = "Menu";
                     }
@@ -115,7 +115,7 @@ public class CameraSelectLevelScript : MonoBehaviour
         }
         else
         {
-            UI_levelName.text = "-";
+            UI_levelName.text = saveTextChapter;
             cameraDestination = startPosition;
         }
 

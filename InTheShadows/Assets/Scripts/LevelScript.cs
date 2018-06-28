@@ -8,13 +8,20 @@ public class LevelScript : MonoBehaviour {
     public string levelName;
     public int levelIndex;
     public Color unlockColor;
+    public List<GameObject> levelTextures;
 
-    [HideInInspector] public bool unlocked = false;
     private ParticleSystem myParticle;
     private Animator myAnim;
     private Color savedColor;
+    private bool hold = false;
+
+    private int Lock = 0;
+    private int Unlock = 1;
+
 	// Use this for initialization
 	void Start () {
+        UserSave.userP.LoadUserPref();
+        hold = false;
         myAnim = GetComponent<Animator>();
         if (myParticleLink)
         {
@@ -27,37 +34,46 @@ public class LevelScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-       // temporaire 
-        if (Input.GetKey("space"))
+        // Si le niveau correspondant au levelName est debloque
+        if (UserSave.userP.getState(levelName) && !hold)
         {
-            unlocked = false;
-            myAnim.SetBool("levelUnlocked", false);
-            StopCoroutine("ParticleColorChange");
-            myAnim.Play("Box_Idle");
-            if (myParticleLink)
-            {
-                ParticleSystem.MainModule psmain = myParticle.main;
-                psmain.startColor = savedColor;
-            }
-        }
-
-        if (unlocked)
-        {
-            if (!myAnim.GetBool("levelUnlocked"))
-                myAnim.SetBool("levelUnlocked", true);
+            myAnim.SetBool("levelUnlocked", true);
 
             if (myParticleLink && myParticleLink.activeSelf && !myParticle.isPlaying)
                 myParticle.Play();
             else if (myParticleLink)
                 StartCoroutine("ParticleColorChange");
+
+                if (myAnim.GetCurrentAnimatorStateInfo(0).IsName("LevelUnlocked"))
+                {
+                    myAnim.SetBool("levelUnlocked", false);
+                    myAnim.SetBool("UnlockIdle", true);
+                    hold = true;
+                }
+        }
+
+        if (!UserSave.userP.getState(levelName) && hold)
+        {
+            myAnim.SetBool("UnlockIdle", false);
+            myAnim.Play("Box_Idle");
+            if (myParticleLink)
+            {
+                ParticleSystem.MainModule psmain = myParticle.main;
+                psmain.startColor = savedColor;
+                StopCoroutine("ParticleColorChange");
+            }
+            hold = false;
         }
 	}
 
     IEnumerator ParticleColorChange()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.3f);
         ParticleSystem.MainModule psmain = myParticle.main;
         psmain.startColor = Color.Lerp(psmain.startColor.color, unlockColor, Time.deltaTime);
+        if (psmain.startColor.color == unlockColor)
+            StopCoroutine("ParticleColorChange");
+        else
+            StartCoroutine("ParticleColorChange");
     }
 }
-
