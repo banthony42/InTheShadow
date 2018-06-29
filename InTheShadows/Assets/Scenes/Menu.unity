@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
-  m_UseRadianceAmbientProbe: 0
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872716, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -55,10 +54,11 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -907,6 +907,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &855123531
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4277377084322954, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -24.738825
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277377084322954, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 40.452522
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277377084322954, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 87.99089
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277377084322954, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277377084322954, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277377084322954, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277377084322954, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277377084322954, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9be0d54ab03604edfa739e6d58ae4de9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &948568580
 Prefab:
   m_ObjectHideFlags: 0
@@ -1018,7 +1060,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 15d5f754861ca7e44b075c75812c88f9, type: 2}
   m_StaticBatchInfo:
@@ -1453,7 +1494,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2138134781
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class UserSave : MonoBehaviour {
 
-    [HideInInspector] public int teapotUnlock;
-    [HideInInspector] public int elephantUnlock;
-    [HideInInspector] public int sombreroUnlock;
-    [HideInInspector] public int fortyTwoUnlock;
-    [HideInInspector] public int earthGlobeUnlock;
+    public enum levelName
+    {
+        TEAPOT,
+        ELEPHANT,
+        SOMBRERO,
+        H2G2,
+        EARTH,
+        SIZE,
+    };
 
     [HideInInspector] public static UserSave userP;
+
+    private int debug;
+    private int[] levelUnlock;
 
     void Awake()
     {
@@ -20,17 +27,33 @@ public class UserSave : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        levelUnlock = new int[(int)levelName.SIZE];
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Menu")
+            UserSave.userP.setDebug(0);
         LoadUserPref();
 	}
+
+    public void setDebug(int state)
+    {
+        debug = state;
+        PlayerPrefs.SetInt("debug", debug);
+        PlayerPrefs.Save();
+    }
+
+    public bool getDebug()
+    {
+        return (debug > 0);
+    }
 
     // Charge les player pref dans les variables
     public void LoadUserPref()
     {
-        teapotUnlock = PlayerPrefs.GetInt("T-Time");
-        elephantUnlock = PlayerPrefs.GetInt("Wild Trumpet");
-        sombreroUnlock = PlayerPrefs.GetInt("Aie, Pepito !");
-        fortyTwoUnlock = PlayerPrefs.GetInt("H2G2");
-        earthGlobeUnlock = PlayerPrefs.GetInt("Blue Planet");
+        levelUnlock[(int)levelName.TEAPOT] = PlayerPrefs.GetInt("T-Time");
+        levelUnlock[(int)levelName.ELEPHANT] = PlayerPrefs.GetInt("Wild Trumpet");
+        levelUnlock[(int)levelName.SOMBRERO] = PlayerPrefs.GetInt("Aie, Pepito !");
+        levelUnlock[(int)levelName.H2G2] = PlayerPrefs.GetInt("H2G2");
+        levelUnlock[(int)levelName.EARTH] = PlayerPrefs.GetInt("Blue Planet");
+        debug = PlayerPrefs.GetInt("debug");
     }
 
     // Reset le contenu des player pref
@@ -49,31 +72,27 @@ public class UserSave : MonoBehaviour {
     // Puis sauvegarde les player pref
     public void UpdatePref()
     {
-        PlayerPrefs.SetInt("T-Time", teapotUnlock);
-        PlayerPrefs.SetInt("Wild Trumpet", elephantUnlock);
-        PlayerPrefs.SetInt("Aie, Pepito !", sombreroUnlock);
-        PlayerPrefs.SetInt("H2G2", fortyTwoUnlock);
-        PlayerPrefs.SetInt("Blue Planet", earthGlobeUnlock);
+        PlayerPrefs.SetInt("T-Time", levelUnlock[(int)levelName.TEAPOT]);
+        PlayerPrefs.SetInt("Wild Trumpet", levelUnlock[(int)levelName.ELEPHANT]);
+        PlayerPrefs.SetInt("Aie, Pepito !", levelUnlock[(int)levelName.SOMBRERO]);
+        PlayerPrefs.SetInt("H2G2", levelUnlock[(int)levelName.H2G2]);
+        PlayerPrefs.SetInt("Blue Planet", levelUnlock[(int)levelName.EARTH]);
         PlayerPrefs.Save();
     }
 
-    public bool getState(string levelName)
+    public bool getState(int levelIndex)
     {
-        return (PlayerPrefs.GetInt(levelName) > 0);
+        if (levelIndex >= 0 && levelIndex < (int)levelName.SIZE)
+            return (levelUnlock[levelIndex] > 0);
+        return false;
     }
 
-    public void setState(string levelName, int state)
+    public void setState(int levelIndex, int state)
     {
-        if (levelName == "T-Time")
-            teapotUnlock = state;
-        else if (levelName == "Wild Trumpet")
-            elephantUnlock = state;
-        else if (levelName == "Aie, Pepito !")
-            sombreroUnlock = state;
-        else if (levelName == "H2G2")
-            fortyTwoUnlock = state;
-        else if (levelName == "Blue Planet")
-            earthGlobeUnlock = state;
-        UpdatePref();
+        if (levelIndex >= 0 && levelIndex < (int)levelName.SIZE)
+        {
+            levelUnlock[levelIndex] = state;
+            UpdatePref();
+        }
     }
 }

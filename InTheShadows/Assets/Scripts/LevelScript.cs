@@ -16,7 +16,6 @@ public class LevelScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        UserSave.userP.LoadUserPref();
         hold = false;
         myAnim = GetComponent<Animator>();
         if (myParticleLink)
@@ -31,7 +30,7 @@ public class LevelScript : MonoBehaviour {
 	void Update () {
 
         // Si le niveau correspondant au levelName est debloque
-        if (UserSave.userP.getState(levelName) && !hold)
+        if ((UserSave.userP.getState(levelIndex) || UserSave.userP.getDebug()) && !hold)
         {
             myAnim.SetBool("levelUnlocked", true);
 
@@ -48,7 +47,7 @@ public class LevelScript : MonoBehaviour {
                 }
         }
 
-        if (!UserSave.userP.getState(levelName) && hold)
+        if (!UserSave.userP.getState(levelIndex) && hold && !UserSave.userP.getDebug())
         {
             myAnim.SetBool("UnlockIdle", false);
             myAnim.Play("Box_Idle");

@@ -36,6 +36,9 @@ public class CameraSelectLevelScript : MonoBehaviour
     void launchLevel(RaycastHit hit)
     {
         LevelScript levelChoose = hit.collider.GetComponent<LevelScript>();
+        if (!UserSave.userP.getState(levelChoose.levelIndex - 1) && levelChoose.levelIndex > 0 && !UserSave.userP.getDebug())
+            return;
+
         player.clip = buttonClic;
         player.Play();
         fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
@@ -68,7 +71,7 @@ public class CameraSelectLevelScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             LevelScript tmp = level[indexLevel].GetComponent<LevelScript>();
-            UserSave.userP.setState(tmp.levelName, 1);
+            UserSave.userP.setState(tmp.levelIndex, 1);
         }
 
         // Clic Handler on a level
