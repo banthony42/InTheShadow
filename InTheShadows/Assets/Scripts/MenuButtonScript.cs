@@ -31,11 +31,13 @@ public class MenuButtonScript : MonoBehaviour
         soundPlayer.Play();
         if (button == "test")
             UserSave.userP.setDebug(1);
-        Debug.Log(UserSave.userP.getDebug());
-        sceneToLoad = "LevelSelect";
-        fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
-        fade.GetComponent<FadeScript>().target = Color.black;
-        fade.GetComponent<FadeScript>().timer = 0f;
+        if (button == "classic" || button == "test")
+        {
+            sceneToLoad = "LevelSelect";
+            fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
+            fade.GetComponent<FadeScript>().target = Color.black;
+            fade.GetComponent<FadeScript>().timer = 0f;
+        }
     }
 
     // Update is called once per frame

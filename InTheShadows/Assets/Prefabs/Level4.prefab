@@ -106,7 +106,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b05da480f16ae45c68cc6144afe1ccc2, type: 2}
   m_StaticBatchInfo:
@@ -141,7 +140,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: d5cea464f1a54f141bddf610a6ce9438, type: 2}
   m_StaticBatchInfo:
@@ -176,7 +174,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b3302d630b70f4804ada907ba1f8bf04, type: 2}
   m_StaticBatchInfo:
@@ -276,7 +273,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114429679519751822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myParticleLink: {fileID: 0}
-  levelName: GlobeEarth
+  levelName: Blue Planet
   levelIndex: 4
   unlockColor: {r: 1, g: 1, b: 1, a: 0.7058824}
 --- !u!224 &224917896376588286

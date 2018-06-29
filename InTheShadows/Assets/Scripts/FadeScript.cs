@@ -16,6 +16,13 @@ public class FadeScript : MonoBehaviour
         rawImage = GetComponent<UnityEngine.UI.RawImage>();
     }
 
+    public void fadeOut()
+    {
+        target = Color.black;
+        timer = 0f;
+        rawImage.raycastTarget = true;
+    }
+
     // Update is called once per frame
     void Update()
     {

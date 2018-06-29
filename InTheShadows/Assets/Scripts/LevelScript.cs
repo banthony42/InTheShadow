@@ -12,7 +12,7 @@ public class LevelScript : MonoBehaviour {
     private ParticleSystem myParticle;
     private Animator myAnim;
     private Color savedColor;
-    private bool hold = false;
+    [HideInInspector] public bool hold;
 
 	// Use this for initialization
 	void Start () {
@@ -25,8 +25,8 @@ public class LevelScript : MonoBehaviour {
             savedColor = psmain.startColor.color;
         }
 	}
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
 	void Update () {
 
         // Si le niveau correspondant au levelName est debloque

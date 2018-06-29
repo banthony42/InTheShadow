@@ -9,7 +9,7 @@ public class CameraSelectLevelScript : MonoBehaviour
     public AudioClip levelSwhitchSound;
     public AudioClip buttonClic;
     public UnityEngine.UI.Text UI_levelName;
-    public GameObject fade;
+    public FadeScript fade;
 
     private AudioSource player;
     private Vector3 cameraDestination;
@@ -41,11 +41,9 @@ public class CameraSelectLevelScript : MonoBehaviour
 
         player.clip = buttonClic;
         player.Play();
-        fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
-        fade.GetComponent<FadeScript>().target = Color.black;
-        fade.GetComponent<FadeScript>().timer = 0f;
+        fade.fadeOut();
         hit.collider.GetComponent<Animator>().SetTrigger("levelSelect");
-        sceneToLoad = "Menu"; //sceneToLoad = hit.collider.GetComponent<LevelScript>().levelName;
+        sceneToLoad = hit.collider.GetComponent<LevelScript>().levelName;
     }
 
     // Update is called once per frame
@@ -65,7 +63,13 @@ public class CameraSelectLevelScript : MonoBehaviour
 
         // Back to the menu
         if (Input.GetKeyDown("escape"))
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        {
+            player.clip = buttonClic;
+            player.pitch = 1.2f;
+            player.Play();
+            fade.fadeOut();
+            sceneToLoad = "Menu";
+        }
 
         // Temporaire 
         if (Input.GetKeyDown(KeyCode.U))

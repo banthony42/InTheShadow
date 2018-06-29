@@ -113,11 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &12397913 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1047146468959560, guid: 93254d887adaa5f4d909b00919aedb92,
-    type: 2}
-  m_PrefabInternal: {fileID: 2088008712}
 --- !u!114 &56874240 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114719084229048944, guid: 306cb7897eae64831a20b68970fcac35,
@@ -300,7 +295,7 @@ MonoBehaviour:
   levelSwhitchSound: {fileID: 8300000, guid: 4bf25974c78ea4c8db31cdf717a39304, type: 3}
   buttonClic: {fileID: 8300000, guid: 12196e2a690324e50ae1cca6c4092bbc, type: 3}
   UI_levelName: {fileID: 525666707}
-  fade: {fileID: 733658952}
+  fade: {fileID: 733658953}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -319,7 +314,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 1
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -363,7 +358,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1.2
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -431,11 +426,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1 &480545549 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1389295322913646, guid: 93254d887adaa5f4d909b00919aedb92,
-    type: 2}
-  m_PrefabInternal: {fileID: 2088008712}
 --- !u!1 &525666704
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,31 +533,22 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 7, y: -7}
   m_UseGraphicAlpha: 1
---- !u!1 &574151184 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1194649153842752, guid: 533e160bd6e77cd4696c344df32ed51d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1569809196}
 --- !u!1 &582828775 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1693297098673050, guid: 93254d887adaa5f4d909b00919aedb92,
     type: 2}
   m_PrefabInternal: {fileID: 2088008712}
---- !u!1 &733658952 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1812721711002416, guid: 2519038ad064346f89e186ac7c663934,
+--- !u!114 &733658953 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114780268819695454, guid: 2519038ad064346f89e186ac7c663934,
     type: 2}
   m_PrefabInternal: {fileID: 2100756564}
+  m_Script: {fileID: 11500000, guid: 48a5627e6630747bfb4e328de840a887, type: 3}
 --- !u!1 &746716827 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1078825924853670, guid: 919792671826f5d4a8bcaceee6251aef,
     type: 2}
   m_PrefabInternal: {fileID: 1060279290}
---- !u!1 &763768944 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1183891655767480, guid: 5b110146919ea934f91fd01bfaafd9b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1434294377}
 --- !u!1001 &777447832
 Prefab:
   m_ObjectHideFlags: 0
@@ -575,6 +556,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 963901057}
     m_Modifications:
+    - target: {fileID: 114970490365964102, guid: 306cb7897eae64831a20b68970fcac35,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224025305702300828, guid: 306cb7897eae64831a20b68970fcac35,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -714,6 +700,36 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114970490365964102, guid: 306cb7897eae64831a20b68970fcac35,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: reset
+      objectReference: {fileID: 0}
+    - target: {fileID: 114970490365964102, guid: 306cb7897eae64831a20b68970fcac35,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114970490365964102, guid: 306cb7897eae64831a20b68970fcac35,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114970490365964102, guid: 306cb7897eae64831a20b68970fcac35,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 282840812}
+    - target: {fileID: 114970490365964102, guid: 306cb7897eae64831a20b68970fcac35,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: resetOnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114970490365964102, guid: 306cb7897eae64831a20b68970fcac35,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 306cb7897eae64831a20b68970fcac35, type: 2}
@@ -892,11 +908,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 7, y: -7}
   m_UseGraphicAlpha: 1
---- !u!1 &958906210 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1977621889309718, guid: 533e160bd6e77cd4696c344df32ed51d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1569809196}
 --- !u!1 &963901053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,11 +1012,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114351988285510468, guid: 919792671826f5d4a8bcaceee6251aef,
-        type: 2}
-      propertyPath: levelTextures.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 224036409200785854, guid: 919792671826f5d4a8bcaceee6251aef,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1096,21 +1102,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114351988285510468, guid: 919792671826f5d4a8bcaceee6251aef,
-        type: 2}
-      propertyPath: levelName
-      value: T-Time
-      objectReference: {fileID: 0}
-    - target: {fileID: 114351988285510468, guid: 919792671826f5d4a8bcaceee6251aef,
-        type: 2}
-      propertyPath: levelTextures.Array.data[0]
-      value: 
-      objectReference: {fileID: 2142354586}
-    - target: {fileID: 114351988285510468, guid: 919792671826f5d4a8bcaceee6251aef,
-        type: 2}
-      propertyPath: levelTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 1207286666}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 919792671826f5d4a8bcaceee6251aef, type: 2}
   m_IsPrefabParent: 0
@@ -1119,21 +1110,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1281337703960864, guid: 5a79fe1c8ed415c429693dc0d979cbef,
     type: 2}
   m_PrefabInternal: {fileID: 1834713384}
---- !u!1 &1207286666 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1112678827054160, guid: 919792671826f5d4a8bcaceee6251aef,
-    type: 2}
-  m_PrefabInternal: {fileID: 1060279290}
---- !u!1 &1219126736 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1214779514041920, guid: 5a79fe1c8ed415c429693dc0d979cbef,
-    type: 2}
-  m_PrefabInternal: {fileID: 1834713384}
---- !u!1 &1233815434 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1939693510824776, guid: 5b110146919ea934f91fd01bfaafd9b3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1434294377}
 --- !u!1001 &1257512860
 Prefab:
   m_ObjectHideFlags: 0
@@ -1183,11 +1159,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114729627986820794, guid: 5b110146919ea934f91fd01bfaafd9b3,
-        type: 2}
-      propertyPath: levelTextures.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 224516554514345782, guid: 5b110146919ea934f91fd01bfaafd9b3,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1278,21 +1249,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114729627986820794, guid: 5b110146919ea934f91fd01bfaafd9b3,
-        type: 2}
-      propertyPath: levelName
-      value: Aie, Pepito !
-      objectReference: {fileID: 0}
-    - target: {fileID: 114729627986820794, guid: 5b110146919ea934f91fd01bfaafd9b3,
-        type: 2}
-      propertyPath: levelTextures.Array.data[0]
-      value: 
-      objectReference: {fileID: 1233815434}
-    - target: {fileID: 114729627986820794, guid: 5b110146919ea934f91fd01bfaafd9b3,
-        type: 2}
-      propertyPath: levelTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 763768944}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b110146919ea934f91fd01bfaafd9b3, type: 2}
   m_IsPrefabParent: 0
@@ -1308,11 +1264,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114125183602793996, guid: 533e160bd6e77cd4696c344df32ed51d,
-        type: 2}
-      propertyPath: levelTextures.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 224459194057068880, guid: 533e160bd6e77cd4696c344df32ed51d,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1403,29 +1354,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114125183602793996, guid: 533e160bd6e77cd4696c344df32ed51d,
-        type: 2}
-      propertyPath: levelName
-      value: H2G2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114125183602793996, guid: 533e160bd6e77cd4696c344df32ed51d,
-        type: 2}
-      propertyPath: levelTextures.Array.data[0]
-      value: 
-      objectReference: {fileID: 958906210}
-    - target: {fileID: 114125183602793996, guid: 533e160bd6e77cd4696c344df32ed51d,
-        type: 2}
-      propertyPath: levelTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 574151184}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 533e160bd6e77cd4696c344df32ed51d, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1609655475 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1074957023355756, guid: 5a79fe1c8ed415c429693dc0d979cbef,
-    type: 2}
-  m_PrefabInternal: {fileID: 1834713384}
 --- !u!1 &1653495883 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1807110133404822, guid: 533e160bd6e77cd4696c344df32ed51d,
@@ -1494,11 +1425,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114429679519751822, guid: 5a79fe1c8ed415c429693dc0d979cbef,
-        type: 2}
-      propertyPath: levelTextures.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 224917896376588286, guid: 5a79fe1c8ed415c429693dc0d979cbef,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1589,21 +1515,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114429679519751822, guid: 5a79fe1c8ed415c429693dc0d979cbef,
-        type: 2}
-      propertyPath: levelName
-      value: Blue Planet
-      objectReference: {fileID: 0}
-    - target: {fileID: 114429679519751822, guid: 5a79fe1c8ed415c429693dc0d979cbef,
-        type: 2}
-      propertyPath: levelTextures.Array.data[0]
-      value: 
-      objectReference: {fileID: 1609655475}
-    - target: {fileID: 114429679519751822, guid: 5a79fe1c8ed415c429693dc0d979cbef,
-        type: 2}
-      propertyPath: levelTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 1219126736}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a79fe1c8ed415c429693dc0d979cbef, type: 2}
   m_IsPrefabParent: 0
@@ -1614,11 +1525,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114639187213080330, guid: 93254d887adaa5f4d909b00919aedb92,
-        type: 2}
-      propertyPath: levelTextures.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 224670611030892308, guid: 93254d887adaa5f4d909b00919aedb92,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1709,21 +1615,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114639187213080330, guid: 93254d887adaa5f4d909b00919aedb92,
-        type: 2}
-      propertyPath: levelName
-      value: Wild Trumpet
-      objectReference: {fileID: 0}
-    - target: {fileID: 114639187213080330, guid: 93254d887adaa5f4d909b00919aedb92,
-        type: 2}
-      propertyPath: levelTextures.Array.data[0]
-      value: 
-      objectReference: {fileID: 12397913}
-    - target: {fileID: 114639187213080330, guid: 93254d887adaa5f4d909b00919aedb92,
-        type: 2}
-      propertyPath: levelTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 480545549}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93254d887adaa5f4d909b00919aedb92, type: 2}
   m_IsPrefabParent: 0
@@ -1831,7 +1722,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1812721711002416, guid: 2519038ad064346f89e186ac7c663934, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2519038ad064346f89e186ac7c663934, type: 2}
@@ -1841,8 +1732,3 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224448097803276384, guid: 2519038ad064346f89e186ac7c663934,
     type: 2}
   m_PrefabInternal: {fileID: 2100756564}
---- !u!1 &2142354586 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1963379510402686, guid: 919792671826f5d4a8bcaceee6251aef,
-    type: 2}
-  m_PrefabInternal: {fileID: 1060279290}
