@@ -640,7 +640,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: 0.6427876
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
       propertyPath: m_LocalRotation.z
@@ -648,7 +648,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7660445
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
       propertyPath: m_RootOrder
@@ -672,7 +672,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -180
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -715,7 +715,7 @@ MonoBehaviour:
   rotation_y: 1
   rotation_x: 1
   move: 1
-  moveSpeed: 10
+  moveSpeed: 2
 --- !u!1 &1702507554
 GameObject:
   m_ObjectHideFlags: 0
