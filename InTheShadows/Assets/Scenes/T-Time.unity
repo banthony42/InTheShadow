@@ -678,6 +678,18 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
   m_IsPrefabParent: 0
@@ -703,6 +715,7 @@ MonoBehaviour:
   rotation_y: 1
   rotation_x: 1
   move: 1
+  moveSpeed: 10
 --- !u!1 &1702507554
 GameObject:
   m_ObjectHideFlags: 0
