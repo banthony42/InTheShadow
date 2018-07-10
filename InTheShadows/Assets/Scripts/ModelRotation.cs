@@ -29,18 +29,18 @@ public class ModelRotation : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            if (move && Input.GetKey(KeyCode.LeftControl))
+            if (move && Input.GetKey(KeyCode.LeftShift))
             {
                 Debug.Log("Update translateVec");
                 positionDest = new Vector3(transform.position.x + Input.GetAxis("Mouse X") * moveSpeed, transform.position.y + Input.GetAxis("Mouse Y") * moveSpeed, transform.position.z);
             }
             else
             {
-                if (rotation_x)
+                if (rotation_x && Input.GetKey(KeyCode.LeftControl))
                 {
                     transform.Rotate(Vector3.right * Input.GetAxis("Mouse Y") * Time.deltaTime * 100);
                 }
-                if (rotation_y)
+                if (rotation_y && !Input.GetKey(KeyCode.LeftControl))
                 {
                     transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * Time.deltaTime * 100);
                 }
