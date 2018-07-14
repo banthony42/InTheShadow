@@ -10,8 +10,15 @@ public class ModelRotation : MonoBehaviour
     public bool move;
     public float moveSpeed;
     public Animator victoryPanel;
+    public Animator cameraAnim;
     public int currentLevel;
-    public string nextLevel;
+
+    private bool _win;
+
+    public bool win
+    {
+        get { return _win; }
+    }
 
     private Vector3 positionDest;
     private float limit;
@@ -21,6 +28,7 @@ public class ModelRotation : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        _win = false;
         limit = 0.5f;
         initialPosition = transform.position;
         initialRotation = transform.rotation;
@@ -44,13 +52,14 @@ public class ModelRotation : MonoBehaviour
             transform.rotation = initialRotation;
             positionDest = transform.position;
         }
-        if (checkWin())
+        if (checkWin() && !_win)
         {
-            Debug.Log("--WIN--");
+            cameraAnim.SetTrigger("cameraShift");
             victoryPanel.SetTrigger("SlideIn");
             UserSave.userP.setState(currentLevel, 1);
+            _win = true;
         }
-        else if (Input.GetMouseButton(0))
+        else if (!_win && Input.GetMouseButton(0))
         {
             if (move && Input.GetKey(KeyCode.LeftShift))
                 positionDest = new Vector3(transform.position.x + Input.GetAxis("Mouse X") * moveSpeed, transform.position.y + Input.GetAxis("Mouse Y") * moveSpeed, transform.position.z);

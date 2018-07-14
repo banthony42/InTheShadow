@@ -24,23 +24,24 @@ public class MenuButtonScript : MonoBehaviour
         soundPlayer.PlayOneShot(buttonTransition);
     }
 
-    public void onClickButton(string button)
+    public void onClickButton(string buttonInfo)
     {
         soundPlayer.volume = 0.5f;
         soundPlayer.clip = buttonClic;
         soundPlayer.Play();
-        if (button == "test")
-            UserSave.userP.setDebug(1);
-        if (button == "classic" || button == "test")
+        if (buttonInfo == "classic" || buttonInfo == "test")
         {
+            if (buttonInfo == "test")
+                UserSave.userP.setDebug(1);
             sceneToLoad = "LevelSelect";
             fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
             fade.GetComponent<FadeScript>().target = Color.black;
             fade.GetComponent<FadeScript>().timer = 0f;
         }
-
-        if (button == "quitLevel")
+        else if (buttonInfo == "quitLevel")
             sceneToLoad = "LevelSelect";
+        else
+            sceneToLoad = buttonInfo;
     }
 
     // Update is called once per frame

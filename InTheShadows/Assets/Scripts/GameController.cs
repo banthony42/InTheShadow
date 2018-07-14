@@ -6,12 +6,16 @@ public class GameController : MonoBehaviour {
 
     public FadeScript fade;
     public AudioClip buttonClic;
+    public AudioClip winSound;
+    public ModelRotation model;
 
     private AudioSource player;
     private string sceneToLoad = "none";
+    private bool winSoundTrig;
 
 	// Use this for initialization
 	void Start () {
+        winSoundTrig = false;
         player = GetComponent<AudioSource>();
 	}
 	
@@ -28,6 +32,13 @@ public class GameController : MonoBehaviour {
             player.Play();
             fade.fadeOut();
             sceneToLoad = "LevelSelect";
+        }
+
+        if (model.win && winSoundTrig == false)
+        {
+            winSoundTrig = true;
+            player.clip = winSound;
+            player.Play();
         }
 	}
 }
