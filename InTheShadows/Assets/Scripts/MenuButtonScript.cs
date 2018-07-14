@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuButtonScript : MonoBehaviour
 {
 
-    public GameObject fade;
+    public FadeScript fade;
     public AudioClip buttonClic;
     public AudioClip buttonTransition;
 
@@ -29,14 +29,12 @@ public class MenuButtonScript : MonoBehaviour
         soundPlayer.volume = 0.5f;
         soundPlayer.clip = buttonClic;
         soundPlayer.Play();
+        fade.fadeOut();
         if (buttonInfo == "classic" || buttonInfo == "test")
         {
             if (buttonInfo == "test")
                 UserSave.userP.setDebug(1);
             sceneToLoad = "LevelSelect";
-            fade.GetComponent<UnityEngine.UI.RawImage>().raycastTarget = true;
-            fade.GetComponent<FadeScript>().target = Color.black;
-            fade.GetComponent<FadeScript>().timer = 0f;
         }
         else if (buttonInfo == "quitLevel")
             sceneToLoad = "LevelSelect";

@@ -380,7 +380,7 @@ Prefab:
         type: 2}
       propertyPath: fade
       value: 
-      objectReference: {fileID: 438025931}
+      objectReference: {fileID: 462635491}
     - target: {fileID: 114880199954342124, guid: 306cb7897eae64831a20b68970fcac35,
         type: 2}
       propertyPath: m_EffectDistance.x
@@ -401,11 +401,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 415699349}
   m_Script: {fileID: 11500000, guid: 85dc7ba08be80492da1b62bd7ad8e5ef, type: 3}
---- !u!1 &438025931 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1812721711002416, guid: 2519038ad064346f89e186ac7c663934,
-    type: 2}
-  m_PrefabInternal: {fileID: 462635490}
 --- !u!224 &438025932 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224448097803276384, guid: 2519038ad064346f89e186ac7c663934,
@@ -577,6 +572,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2519038ad064346f89e186ac7c663934, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &462635491 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114780268819695454, guid: 2519038ad064346f89e186ac7c663934,
+    type: 2}
+  m_PrefabInternal: {fileID: 462635490}
+  m_Script: {fileID: 11500000, guid: 48a5627e6630747bfb4e328de840a887, type: 3}
 --- !u!4 &623560050 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 39ae12a8c14c34ba69f5f1a54b0ccb89, type: 3}
@@ -735,7 +736,7 @@ Prefab:
         type: 2}
       propertyPath: fade
       value: 
-      objectReference: {fileID: 438025931}
+      objectReference: {fileID: 462635491}
     - target: {fileID: 114880199954342124, guid: 306cb7897eae64831a20b68970fcac35,
         type: 2}
       propertyPath: m_EffectDistance.x
@@ -745,6 +746,11 @@ Prefab:
         type: 2}
       propertyPath: m_EffectDistance.y
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114307439792517240, guid: 306cb7897eae64831a20b68970fcac35,
+        type: 2}
+      propertyPath: m_Text
+      value: Classic Mode
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
