@@ -22,10 +22,17 @@ public class CameraSelectLevelScript : MonoBehaviour
     private Camera myCam;
     private string sceneToLoad = "none";
     private string saveTextChapter;
+    private bool _cameraOk;
 
+    public bool cameraOk
+    {
+        get { return _cameraOk; }
+        set { _cameraOk = value; }
+    }
     // Use this for initialization
     void Start()
     {
+        cameraOk = false;
         myCam = gameObject.GetComponent<Camera>();
         player = GetComponent<AudioSource>();
         startPosition = transform.position;
@@ -60,6 +67,9 @@ public class CameraSelectLevelScript : MonoBehaviour
                 player.PlayOneShot(levelSwhitchSound);
             myCam.fieldOfView += (myCam.fieldOfView * speedTravel) * Time.deltaTime;
         }
+
+        if (myCam.fieldOfView > 59)
+            _cameraOk = true;
 
         // Back to the menu
         if (Input.GetKeyDown("escape"))

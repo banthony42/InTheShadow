@@ -9,24 +9,48 @@ public class ModelRotation : MonoBehaviour
     public bool rotation_x;
     public bool move;
     public float moveSpeed;
+    public Animator victoryPanel;
+    public int currentLevel;
+    public string nextLevel;
 
-    private Quaternion rotationDest = Quaternion.identity;
     private Vector3 positionDest;
-
-    private Vector3 translateVec;
-    private Quaternion rotateVec = Quaternion.identity;
+    private float limit;
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
 
     // Use this for initialization
     void Start()
     {
-        rotationDest = transform.rotation;
+        limit = 0.5f;
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
         positionDest = transform.position;
+    }
+
+    bool checkWin()
+    {
+        float delta = Mathf.DeltaAngle(transform.rotation.eulerAngles.y, 180);
+        if (delta >=  (-1 * limit) && delta <= limit)
+            return true;
+        return false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetKeyDown("space"))
+        {
+            transform.position = initialPosition;
+            transform.rotation = initialRotation;
+            positionDest = transform.position;
+        }
+        if (checkWin())
+        {
+            Debug.Log("--WIN--");
+            victoryPanel.SetTrigger("SlideIn");
+            UserSave.userP.setState(currentLevel, 1);
+        }
+        else if (Input.GetMouseButton(0))
         {
             if (move && Input.GetKey(KeyCode.LeftShift))
                 positionDest = new Vector3(transform.position.x + Input.GetAxis("Mouse X") * moveSpeed, transform.position.y + Input.GetAxis("Mouse Y") * moveSpeed, transform.position.z);
@@ -41,8 +65,5 @@ public class ModelRotation : MonoBehaviour
 
         if (move && Vector3.Distance(transform.position, positionDest) > 0.2f)
             transform.position = Vector3.Lerp(transform.position, positionDest, Time.deltaTime * moveSpeed);
-
-        if (transform.rotation.eulerAngles.Equals(Quaternion.Euler(0, 180, 0)))
-            Debug.Log("--WIN--");
     }
 }

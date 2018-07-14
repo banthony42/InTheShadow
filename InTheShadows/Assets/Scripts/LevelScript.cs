@@ -8,10 +8,13 @@ public class LevelScript : MonoBehaviour {
     public string levelName;
     public int levelIndex;
     public Color unlockColor;
+    public CameraSelectLevelScript myCam;
 
     private ParticleSystem myParticle;
     private Animator myAnim;
     private Color savedColor;
+
+
     [HideInInspector] public bool hold;
 
 	// Use this for initialization
@@ -28,7 +31,8 @@ public class LevelScript : MonoBehaviour {
 
     // Update is called once per frame
 	void Update () {
-
+        if (myCam.cameraOk == false)
+            return;
         // Si le niveau correspondant au levelName est debloque
         if ((UserSave.userP.getState(levelIndex) || UserSave.userP.getDebug()) && !hold)
         {

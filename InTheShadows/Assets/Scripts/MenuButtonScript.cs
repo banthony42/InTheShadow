@@ -38,6 +38,9 @@ public class MenuButtonScript : MonoBehaviour
             fade.GetComponent<FadeScript>().target = Color.black;
             fade.GetComponent<FadeScript>().timer = 0f;
         }
+
+        if (button == "quitLevel")
+            sceneToLoad = "LevelSelect";
     }
 
     // Update is called once per frame
