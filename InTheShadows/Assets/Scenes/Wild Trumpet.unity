@@ -637,15 +637,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -653,7 +653,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
       propertyPath: m_LocalScale.x
@@ -666,6 +666,18 @@ Prefab:
     - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb0f15a5da36a4e6a8e3ac3276e979d1, type: 3}
@@ -693,6 +705,9 @@ MonoBehaviour:
   rotation_x: 1
   move: 0
   moveSpeed: 2
+  angleIncrement: 50
+  winRotation: {x: 90, y: -15, z: 0}
+  winPosition: {x: 0, y: 0, z: 0}
   victoryPanel: {fileID: 280535438}
   cameraAnim: {fileID: 2088452213}
   currentLevel: 1

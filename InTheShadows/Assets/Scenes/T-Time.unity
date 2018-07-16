@@ -574,7 +574,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1812721711002416, guid: 2519038ad064346f89e186ac7c663934, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2519038ad064346f89e186ac7c663934, type: 2}
@@ -757,6 +757,11 @@ Prefab:
       propertyPath: cameraAnim
       value: 
       objectReference: {fileID: 1702507559}
+    - target: {fileID: 114325361641297688, guid: 7e9c80d1f31b24caebeac43b630e62fd,
+        type: 2}
+      propertyPath: angleIncrement
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e9c80d1f31b24caebeac43b630e62fd, type: 2}
   m_IsPrefabParent: 0
