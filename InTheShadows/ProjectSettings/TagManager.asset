@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - model_4
+  - model_2
   - level
+  - model
   layers:
   - Default
   - TransparentFX

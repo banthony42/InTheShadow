@@ -19,6 +19,9 @@ public class ModelRotation : MonoBehaviour
     public Animator cameraAnim;
     public int currentLevel;
 
+    public ModelRotation dependance;
+
+    private Transform target;
     private bool _win;
 
     public bool win
@@ -26,7 +29,6 @@ public class ModelRotation : MonoBehaviour
         get { return _win; }
     }
 
-    private Quaternion rotationDest;
     private Vector3 positionDest;
     private float limit;
     private Vector3 initialPosition;
@@ -40,39 +42,25 @@ public class ModelRotation : MonoBehaviour
         initialPosition = transform.position;
         initialRotation = transform.rotation;
         positionDest = transform.position;
-        rotationDest = transform.rotation;
+        target = transform;
     }
 
     bool checkWin()
     {
         float delta = Mathf.DeltaAngle(transform.rotation.eulerAngles.y, winRotation.y);
-        Debug.Log("first " + delta);
         if (delta >= (-1 * limit) && delta <= limit)
         {
             delta = Mathf.DeltaAngle(transform.rotation.eulerAngles.x, winRotation.x);
-            Debug.Log("second " + delta);
             if (delta >= (-1 * limit) && delta <= limit)
             {
-                Debug.Log("third");
-                if (!move || (move && Vector3.Distance(transform.position, winPosition) <= limit))
-                    return true;
-                else
-                    Debug.Log("Third fail");
+                if (!move || (move && Vector3.Distance(transform.localPosition, winPosition) <= 0.3f))
+                {
+                    if (!dependance || dependance && dependance.win)
+                        return true;
+                }
             }
         }
         return false;
-    }
-
-    bool deltaQuaternion(Quaternion delta, float lim)
-    {
-        float diff = delta.eulerAngles.y - transform.rotation.eulerAngles.y;
-        if (diff >= (-1 * lim) && diff <= lim)
-        {
-            diff = delta.eulerAngles.x - transform.rotation.eulerAngles.x;
-            if (diff >= (-1 * lim) && diff <= lim)
-                return false;
-        }
-        return true;
     }
 
     // Update is called once per frame
@@ -83,7 +71,6 @@ public class ModelRotation : MonoBehaviour
             transform.position = initialPosition;
             transform.rotation = initialRotation;
             positionDest = transform.position;
-            rotationDest = transform.rotation;
         }
         if (checkWin() && !_win)
         {
@@ -94,18 +81,35 @@ public class ModelRotation : MonoBehaviour
         }
         else if (!_win && Input.GetMouseButton(0))
         {
+            if (move)
+            {
+                // Raycast on mouse pointer and move the object hit
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit, 1000))
+                {
+                    Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red, 1);
+                    if (hit.collider.tag == "model")
+                    {
+                        target = hit.collider.transform;
+                        initialPosition = target.position;
+                        initialRotation = target.rotation;
+                        positionDest = target.position;
+                    }
+                }
+            }
+
             if (move && Input.GetKey(KeyCode.LeftShift))
-                positionDest = new Vector3(transform.position.x + Input.GetAxis("Mouse X") * moveSpeed, transform.position.y + Input.GetAxis("Mouse Y") * moveSpeed, transform.position.z);
+                positionDest = new Vector3(target.position.x, target.position.y + Input.GetAxis("Mouse Y") * moveSpeed, target.position.z);
             else
             {
-                rotationDest = transform.rotation;
                 if (rotation_x && Input.GetKey(KeyCode.LeftControl))
-                    transform.Rotate(Input.GetAxis("Mouse Y") * Time.deltaTime * 100, 0, 0, Space.Self);
+                    target.Rotate(Input.GetAxis("Mouse Y") * Time.deltaTime * 100, 0, 0, Space.Self);
                 else if (rotation_y)
-                    transform.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 100, 0, Space.World);
+                    target.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 100, 0, Space.World);
             }
         }
-        if (move && Vector3.Distance(transform.position, positionDest) > limit)
-            transform.position = Vector3.Lerp(transform.position, positionDest, Time.deltaTime * moveSpeed);
+        if (move && Vector3.Distance(target.position, positionDest) > 0.2f)
+            target.position = Vector3.Lerp(target.position, positionDest, Time.deltaTime * moveSpeed);
     }
 }

@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{7DB6FD5E-C631-FF79-F27E-DE6983D911A1}|">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ModelRotation.cs">
     <Files>
       <File FileName="Assets/Scripts/SpotMovement.cs" Line="6" Column="5" />
       <File FileName="Assets/Scripts/CameraSelectLevelScript.cs" Line="69" Column="10" />
@@ -7,13 +7,15 @@
       <File FileName="Assets/Scripts/UserSave.cs" Line="50" Column="6" />
       <File FileName="Assets/Scripts/GameController.cs" Line="15" Column="1" />
       <File FileName="Assets/Scripts/FadeScript.cs" Line="17" Column="6" />
-      <File FileName="Assets/Scripts/ModelRotation.cs" Line="48" Column="6" />
-      <File FileName="Assets/Scripts/MenuButtonScript.cs" Line="40" Column="10" />
+      <File FileName="Assets/Scripts/ModelRotation.cs" Line="89" Column="47" />
+      <File FileName="Assets/Scripts/MenuButtonScript.cs" Line="34" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="/Volumes/Storage/goinfre/banthony/InTheShadows/InTheShadows/Assets/Scripts/ModelRotation.cs" relfile="Assets/Scripts/ModelRotation.cs" line="94" column="53" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
