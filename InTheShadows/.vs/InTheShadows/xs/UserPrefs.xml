@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{7DB6FD5E-C631-FF79-F27E-DE6983D911A1}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ModelRotation.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Assets/Scripts/SpotMovement.cs" Line="6" Column="5" />
       <File FileName="Assets/Scripts/CameraSelectLevelScript.cs" Line="69" Column="10" />
