@@ -5,9 +5,9 @@
       <File FileName="Assets/Scripts/CameraSelectLevelScript.cs" Line="69" Column="10" />
       <File FileName="Assets/Scripts/LevelScript.cs" Line="10" Column="30" />
       <File FileName="Assets/Scripts/UserSave.cs" Line="50" Column="6" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="46" Column="21" />
       <File FileName="Assets/Scripts/FadeScript.cs" Line="17" Column="6" />
-      <File FileName="Assets/Scripts/ModelRotation.cs" Line="89" Column="47" />
+      <File FileName="Assets/Scripts/ModelRotation.cs" Line="101" Column="80" />
       <File FileName="Assets/Scripts/MenuButtonScript.cs" Line="34" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -98,7 +98,7 @@ public class ModelRotation : MonoBehaviour
                     target.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 100, 0, Space.World);
             }
         }
-        if (move && Vector3.Distance(target.position, positionDest) > posLimit - 0.05)
+        if (move && Vector3.Distance(target.position, positionDest) > posLimit)
             target.position = Vector3.Lerp(target.position, positionDest, Time.deltaTime * moveSpeed);
     }
 }
