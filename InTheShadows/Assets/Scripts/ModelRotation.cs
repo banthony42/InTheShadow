@@ -14,12 +14,9 @@ public class ModelRotation : MonoBehaviour
 
     public Vector3 winRotation;
     public Vector3 winPosition;
+    public float posLimit;
 
-    public Animator victoryPanel;
-    public Animator cameraAnim;
     public int currentLevel;
-
-    public ModelRotation dependance;
 
     private Transform target;
     private bool _win;
@@ -53,11 +50,8 @@ public class ModelRotation : MonoBehaviour
             delta = Mathf.DeltaAngle(transform.rotation.eulerAngles.x, winRotation.x);
             if (delta >= (-1 * limit) && delta <= limit)
             {
-                if (!move || (move && Vector3.Distance(transform.localPosition, winPosition) <= 0.3f))
-                {
-                    if (!dependance || dependance && dependance.win)
-                        return true;
-                }
+                if (!move || (move && Vector3.Distance(transform.localPosition, winPosition) <= posLimit))
+                    return true;
             }
         }
         return false;
@@ -68,17 +62,12 @@ public class ModelRotation : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            transform.position = initialPosition;
-            transform.rotation = initialRotation;
-            positionDest = transform.position;
+            target.position = initialPosition;
+            target.rotation = initialRotation;
+            positionDest = target.position;
         }
         if (checkWin() && !_win)
-        {
-            cameraAnim.SetTrigger("cameraShift");
-            victoryPanel.SetTrigger("SlideIn");
-            UserSave.userP.setState(currentLevel, 1);
             _win = true;
-        }
         else if (!_win && Input.GetMouseButton(0))
         {
             if (move)
@@ -109,7 +98,7 @@ public class ModelRotation : MonoBehaviour
                     target.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 100, 0, Space.World);
             }
         }
-        if (move && Vector3.Distance(target.position, positionDest) > 0.2f)
+        if (move && Vector3.Distance(target.position, positionDest) > posLimit - 0.05)
             target.position = Vector3.Lerp(target.position, positionDest, Time.deltaTime * moveSpeed);
     }
 }

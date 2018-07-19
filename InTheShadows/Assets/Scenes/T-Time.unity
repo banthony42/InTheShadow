@@ -113,6 +113,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &56479629 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114325361641297688, guid: 7e9c80d1f31b24caebeac43b630e62fd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1642917582}
+  m_Script: {fileID: 11500000, guid: c7384e78b434b4c1ea20f96bb16fc323, type: 3}
 --- !u!1 &161790418
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +784,26 @@ Prefab:
         type: 2}
       propertyPath: winRotation.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114029526152872140, guid: 7e9c80d1f31b24caebeac43b630e62fd,
+        type: 2}
+      propertyPath: model1
+      value: 
+      objectReference: {fileID: 56479629}
+    - target: {fileID: 114029526152872140, guid: 7e9c80d1f31b24caebeac43b630e62fd,
+        type: 2}
+      propertyPath: victoryPanel
+      value: 
+      objectReference: {fileID: 1639953949}
+    - target: {fileID: 114029526152872140, guid: 7e9c80d1f31b24caebeac43b630e62fd,
+        type: 2}
+      propertyPath: cameraAnim
+      value: 
+      objectReference: {fileID: 1702507559}
+    - target: {fileID: 114325361641297688, guid: 7e9c80d1f31b24caebeac43b630e62fd,
+        type: 2}
+      propertyPath: posLimit
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e9c80d1f31b24caebeac43b630e62fd, type: 2}

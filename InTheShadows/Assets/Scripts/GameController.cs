@@ -7,7 +7,11 @@ public class GameController : MonoBehaviour {
     public FadeScript fade;
     public AudioClip buttonClic;
     public AudioClip winSound;
-    public ModelRotation model;
+    public ModelRotation model1;
+    public ModelRotation model2;
+
+    public Animator victoryPanel;
+    public Animator cameraAnim;
 
     private AudioSource player;
     private string sceneToLoad = "none";
@@ -34,11 +38,19 @@ public class GameController : MonoBehaviour {
             sceneToLoad = "LevelSelect";
         }
 
-        if (model.win && winSoundTrig == false)
+        if (model1.win && winSoundTrig == false)
         {
-            winSoundTrig = true;
-            player.clip = winSound;
-            player.Play();
+            if (!model2 || model2 && model2.win)
+            {
+                UserSave.userP.setState(model1.currentLevel, 1);
+                if (model2)
+                    UserSave.userP.setState(model2.currentLevel, 1);
+                cameraAnim.SetTrigger("cameraShift");
+                victoryPanel.SetTrigger("SlideIn");
+                winSoundTrig = true;
+                player.clip = winSound;
+                player.Play();
+            }
         }
 	}
 }

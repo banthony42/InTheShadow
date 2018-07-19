@@ -298,8 +298,7 @@ MonoBehaviour:
   angleIncrement: 50
   winRotation: {x: 80, y: 90, z: 0}
   winPosition: {x: 0, y: 0, z: 0}
-  victoryPanel: {fileID: 711821353}
-  cameraAnim: {fileID: 1961503237}
+  posLimit: 0.5
   currentLevel: 2
 --- !u!1001 &537611495
 Prefab:
@@ -730,7 +729,10 @@ MonoBehaviour:
   fade: {fileID: 340659559}
   buttonClic: {fileID: 8300000, guid: 12196e2a690324e50ae1cca6c4092bbc, type: 3}
   winSound: {fileID: 8300000, guid: e555056902f8547dc9a3cd978acefee0, type: 3}
-  model: {fileID: 347225653}
+  model1: {fileID: 347225653}
+  model2: {fileID: 0}
+  victoryPanel: {fileID: 711821353}
+  cameraAnim: {fileID: 1961503237}
 --- !u!1001 &1431363621
 Prefab:
   m_ObjectHideFlags: 0
