@@ -587,7 +587,7 @@ MonoBehaviour:
   angleIncrement: 50
   winRotation: {x: 90, y: 0, z: 0}
   winPosition: {x: 0, y: 0, z: 7.5}
-  posLimit: 0.2
+  posLimit: 0.5
   currentLevel: 4
 --- !u!64 &1214120445
 MeshCollider:
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   angleIncrement: 50
   winRotation: {x: -90, y: 170, z: 0}
   winPosition: {x: 0, y: 0, z: 5}
-  posLimit: 0.2
+  posLimit: 0.5
   currentLevel: 4
 --- !u!64 &2136442826
 MeshCollider:
