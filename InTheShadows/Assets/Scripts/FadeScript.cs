@@ -5,14 +5,17 @@ using UnityEngine;
 public class FadeScript : MonoBehaviour
 {
     public float fadeTime;
+    public Animator titleAnim;
 
     [HideInInspector] public float timer = 0f;
     [HideInInspector] public Color target = Color.clear;
     [HideInInspector] public bool enable = true;
     private UnityEngine.UI.RawImage rawImage;
+    private float titleTimer;
     // Use this for initialization
     void Start()
     {
+        titleTimer = 0;
         rawImage = GetComponent<UnityEngine.UI.RawImage>();
     }
 
@@ -35,6 +38,14 @@ public class FadeScript : MonoBehaviour
         {
             rawImage.raycastTarget = false;
             enable = false;
+        }
+
+        if (enable == false && titleAnim)
+        {
+            if (titleTimer > 2f)
+                titleAnim.SetTrigger("TitleFadeOut");
+            else
+                titleTimer += Time.deltaTime / 1f;
         }
     }
 }

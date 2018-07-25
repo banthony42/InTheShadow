@@ -504,7 +504,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42d9aa58e44134962817bfb0fbcc064f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 42d9aa58e44134962817bfb0fbcc064f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -583,11 +583,12 @@ MonoBehaviour:
   rotation_y: 1
   rotation_x: 1
   move: 1
+  enableFlip: 1
   moveSpeed: 2
   angleIncrement: 50
   winRotation: {x: 90, y: 0, z: 0}
   winPosition: {x: 0, y: 0, z: 7.5}
-  posLimit: 0.5
+  posLimit: 0.2
   currentLevel: 4
 --- !u!64 &1214120445
 MeshCollider:
@@ -603,6 +604,121 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 42d9aa58e44134962817bfb0fbcc064f, type: 3}
+--- !u!1001 &1283860819
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1887531797}
+    m_Modifications:
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.28708142
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.7284664
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.7129187
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.8835809
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114055565216268550, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+        type: 2}
+      propertyPath: m_Text
+      value: Blue Planet
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6525fc0649f3d45ff80ccf6a462e88b1, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &1283860820 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224415280733842884, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1283860819}
+--- !u!95 &1283860821 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95464852257595230, guid: 6525fc0649f3d45ff80ccf6a462e88b1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1283860819}
 --- !u!1001 &1766090806
 Prefab:
   m_ObjectHideFlags: 0
@@ -732,6 +848,7 @@ RectTransform:
   m_Children:
   - {fileID: 822924454}
   - {fileID: 2056549896}
+  - {fileID: 1283860820}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -839,8 +956,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1812721711002416, guid: 2519038ad064346f89e186ac7c663934, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114780268819695454, guid: 2519038ad064346f89e186ac7c663934,
+        type: 2}
+      propertyPath: titleAnim
+      value: 
+      objectReference: {fileID: 1283860821}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2519038ad064346f89e186ac7c663934, type: 2}
   m_IsPrefabParent: 0
@@ -1122,11 +1244,12 @@ MonoBehaviour:
   rotation_y: 1
   rotation_x: 1
   move: 1
-  moveSpeed: 2
+  enableFlip: 0
+  moveSpeed: 3
   angleIncrement: 50
-  winRotation: {x: -90, y: 170, z: 0}
+  winRotation: {x: -91, y: 172, z: 0}
   winPosition: {x: 0, y: 0, z: 5}
-  posLimit: 0.5
+  posLimit: 0.1
   currentLevel: 4
 --- !u!64 &2136442826
 MeshCollider:

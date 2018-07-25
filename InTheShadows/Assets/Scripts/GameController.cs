@@ -16,10 +16,12 @@ public class GameController : MonoBehaviour {
     private AudioSource player;
     private string sceneToLoad = "none";
     private bool winSoundTrig;
+    private bool firstWin;
 
 	// Use this for initialization
 	void Start () {
         winSoundTrig = false;
+        firstWin = false;
         player = GetComponent<AudioSource>();
 	}
 	
@@ -38,6 +40,17 @@ public class GameController : MonoBehaviour {
             sceneToLoad = "LevelSelect";
         }
 
+        if (model1.win || model2.win)
+        {
+            if (firstWin == false)
+            {
+                player.PlayOneShot(winSound, 0.1f);
+                firstWin = true;
+            }
+        }
+        else
+            firstWin = false;
+        
         if (model1.win && winSoundTrig == false)
         {
             if (!model2 || model2 && model2.win)

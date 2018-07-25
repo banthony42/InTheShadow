@@ -8,6 +8,7 @@ public class ModelRotation : MonoBehaviour
     public bool rotation_y;
     public bool rotation_x;
     public bool move;
+    public bool enableFlip;
 
     public float moveSpeed;
     public float angleIncrement;
@@ -26,7 +27,6 @@ public class ModelRotation : MonoBehaviour
         get { return _win; }
     }
 
-    private Vector3 positionDest;
     private float limit;
     private Vector3 initialPosition;
     private Quaternion initialRotation;
@@ -38,7 +38,6 @@ public class ModelRotation : MonoBehaviour
         limit = 2f;
         initialPosition = transform.position;
         initialRotation = transform.rotation;
-        positionDest = transform.position;
         target = transform;
     }
 
@@ -54,6 +53,19 @@ public class ModelRotation : MonoBehaviour
                     return true;
             }
         }
+        if (enableFlip)
+        {
+            delta = Mathf.DeltaAngle(transform.rotation.eulerAngles.y, winRotation.y + 180);
+            if (delta >= (-1 * limit) && delta <= limit)
+            {
+                delta = Mathf.DeltaAngle(transform.rotation.eulerAngles.x, winRotation.x + 180);
+                if (delta >= (-1 * limit) && delta <= limit)
+                {
+                    if (!move || (move && Vector3.Distance(transform.localPosition, winPosition) <= posLimit))
+                        return true;
+                }
+            }            
+        }
         return false;
     }
 
@@ -62,34 +74,26 @@ public class ModelRotation : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            target.position = initialPosition;
-            target.rotation = initialRotation;
-            positionDest = target.position;
+            transform.position = initialPosition;
+            transform.rotation = initialRotation;
         }
-        if (checkWin() && !_win)
-            _win = true;
-        else if (!_win && Input.GetMouseButton(0))
+        if (move && !_win && Input.GetMouseButtonDown(0))
         {
-            if (move)
-            {
-                // Raycast on mouse pointer and move the object hit
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit, 1000))
                 {
                     Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red, 1);
                     if (hit.collider.tag == "model")
-                    {
                         target = hit.collider.transform;
-                        initialPosition = target.position;
-                        initialRotation = target.rotation;
-                        positionDest = target.position;
-                    }
                 }
-            }
-
+        }
+        if (checkWin() && !_win)
+            _win = true;
+        else if (!_win && Input.GetMouseButton(0))
+        {
             if (move && Input.GetKey(KeyCode.LeftShift))
-                positionDest = new Vector3(target.position.x, target.position.y + Input.GetAxis("Mouse Y") * moveSpeed, target.position.z);
+                target.Translate(Vector3.up * Input.GetAxis("Mouse Y") * Time.deltaTime * moveSpeed, Space.World);
             else
             {
                 if (rotation_x && Input.GetKey(KeyCode.LeftControl))
@@ -98,7 +102,5 @@ public class ModelRotation : MonoBehaviour
                     target.Rotate(0, Input.GetAxis("Mouse X") * Time.deltaTime * 100, 0, Space.World);
             }
         }
-        if (move && Vector3.Distance(target.position, positionDest) > posLimit)
-            target.position = Vector3.Lerp(target.position, positionDest, Time.deltaTime * moveSpeed);
     }
 }
