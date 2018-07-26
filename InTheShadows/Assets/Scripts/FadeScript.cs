@@ -31,9 +31,7 @@ public class FadeScript : MonoBehaviour
     {
         rawImage.color = Color.Lerp(rawImage.color, target, timer);
         if (timer < 1)
-        {
             timer += Time.deltaTime / fadeTime;
-        }
         if (rawImage.color.a < 0.1f && enable)
         {
             rawImage.raycastTarget = false;

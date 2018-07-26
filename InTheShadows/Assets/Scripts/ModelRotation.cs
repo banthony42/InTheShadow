@@ -11,7 +11,6 @@ public class ModelRotation : MonoBehaviour
     public bool enableFlip;
 
     public float moveSpeed;
-    public float angleIncrement;
 
     public Vector3 winRotation;
     public Vector3 winPosition;

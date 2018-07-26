@@ -81,13 +81,6 @@ public class CameraSelectLevelScript : MonoBehaviour
             sceneToLoad = "Menu";
         }
 
-        // Temporaire 
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            LevelScript tmp = level[indexLevel].GetComponent<LevelScript>();
-            UserSave.userP.setState(tmp.levelIndex, 1);
-        }
-
         // Clic Handler on a level
         if (Input.GetMouseButtonDown(0))
         {
@@ -134,7 +127,7 @@ public class CameraSelectLevelScript : MonoBehaviour
             cameraDestination.y -= 10;
             cameraDestination.z = 40f;
         }
-        // Si index < 0, la camera se met en position initial
+        // Si index < 0, la camera se met en position initial (vue global du chemin de niveaux)
         else
         {
             UI_levelName.text = saveTextChapter;

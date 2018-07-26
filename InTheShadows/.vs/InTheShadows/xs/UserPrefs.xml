@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{7DB6FD5E-C631-FF79-F27E-DE6983D911A1}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MusicManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraSelectLevelScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/SpotMovement.cs" Line="6" Column="5" />
-      <File FileName="Assets/Scripts/CameraSelectLevelScript.cs" Line="81" Column="34" />
+      <File FileName="Assets/Scripts/SpotMovement.cs" Line="21" Column="49" />
+      <File FileName="Assets/Scripts/CameraSelectLevelScript.cs" Line="94" Column="28" />
       <File FileName="Assets/Scripts/LevelScript.cs" Line="10" Column="30" />
-      <File FileName="Assets/Scripts/UserSave.cs" Line="50" Column="6" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="58" Column="56" />
+      <File FileName="Assets/Scripts/UserSave.cs" Line="34" Column="3" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="54" Column="1" />
       <File FileName="Assets/Scripts/FadeScript.cs" Line="20" Column="1" />
       <File FileName="Assets/Scripts/ModelRotation.cs" Line="92" Column="25" />
-      <File FileName="Assets/Scripts/MenuButtonScript.cs" Line="44" Column="1" />
+      <File FileName="Assets/Scripts/MenuButtonScript.cs" Line="64" Column="40" />
       <File FileName="Assets/Scripts/HideButtonScript.cs" Line="20" Column="51" />
-      <File FileName="Assets/Scripts/MusicManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MusicManager.cs" Line="22" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
