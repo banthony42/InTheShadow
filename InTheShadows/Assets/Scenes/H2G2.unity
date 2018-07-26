@@ -636,7 +636,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 042d70f8ad1844a37aa1d8964c9bbef4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 042d70f8ad1844a37aa1d8964c9bbef4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation_y: 1
-  rotation_x: 1
+  rotation_x: 0
   move: 1
   enableFlip: 0
   moveSpeed: 2

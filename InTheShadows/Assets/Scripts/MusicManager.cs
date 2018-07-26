@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MusicManager : MonoBehaviour
 {
-    public static MusicManager instance = null;
+    [HideInInspector] public static MusicManager instance = null;
 
     void Awake()
     {

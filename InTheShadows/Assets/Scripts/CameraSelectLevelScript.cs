@@ -13,7 +13,7 @@ public class CameraSelectLevelScript : MonoBehaviour
 
     private AudioSource player;
     private Vector3 cameraDestination;
-    private Vector3 startPosition;    // pos(0,-45,15) rot(-45,0,0)
+    private Vector3 startPosition;
     private int indexLevel = -1;
     private float remaining;
     private float remainingLimit = 5f;

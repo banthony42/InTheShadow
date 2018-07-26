@@ -8,7 +8,8 @@ public class SpotMovement : MonoBehaviour {
     public float lim;
 
     private Vector3 targetPosition;
-	// Use this for initialization
+
+    // Use this for initialization
 	void Start () {
         targetPosition = new Vector3(Random.Range(-lim, lim), Random.Range(-lim, lim), transform.position.z);
 	}

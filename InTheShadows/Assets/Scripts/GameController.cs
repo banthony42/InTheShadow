@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour {
             sceneToLoad = "LevelSelect";
         }
 
-        if (model1.win || model2.win)
+        if ((model1 && model1.win) || (model2 && model2.win))
         {
             if (firstWin == false)
             {
@@ -48,16 +48,19 @@ public class GameController : MonoBehaviour {
                 firstWin = true;
             }
         }
-        else
+        else if ((model1 && !model1.win) || (model2 && !model2.win))
             firstWin = false;
-        
         if (model1.win && winSoundTrig == false)
         {
             if (!model2 || model2 && model2.win)
             {
-                UserSave.userP.setState(model1.currentLevel, 1);
-                if (model2)
-                    UserSave.userP.setState(model2.currentLevel, 1);
+                if (UserSave.userP.getDebug() == false)
+                {
+                    Debug.Log("debug win");
+                    UserSave.userP.setState(model1.currentLevel, 1);
+                    if (model2)
+                        UserSave.userP.setState(model2.currentLevel, 1);
+                }
                 cameraAnim.SetTrigger("cameraShift");
                 victoryPanel.SetTrigger("SlideIn");
                 winSoundTrig = true;
