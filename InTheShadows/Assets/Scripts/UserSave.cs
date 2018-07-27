@@ -17,6 +17,7 @@ public class UserSave : MonoBehaviour {
     [HideInInspector] public static UserSave userP;
 
     private int debug;
+    private int mute;
     private int[] levelUnlock;
 
     void Awake()
@@ -33,6 +34,13 @@ public class UserSave : MonoBehaviour {
         LoadUserPref();
 	}
 
+    public void setMute(int state)
+    {
+        mute = state;
+        PlayerPrefs.SetInt("mute", mute);
+        PlayerPrefs.Save();
+    }
+
     public void setDebug(int state)
     {
         debug = state;
@@ -45,6 +53,11 @@ public class UserSave : MonoBehaviour {
         return (debug > 0);
     }
 
+    public bool getMute()
+    {
+        return (mute > 0);
+    }
+
     // Charge les player pref dans les variables
     public void LoadUserPref()
     {
@@ -54,6 +67,7 @@ public class UserSave : MonoBehaviour {
         levelUnlock[(int)levelName.H2G2] = PlayerPrefs.GetInt("H2G2");
         levelUnlock[(int)levelName.EARTH] = PlayerPrefs.GetInt("Blue Planet");
         debug = PlayerPrefs.GetInt("debug");
+        mute = PlayerPrefs.GetInt("mute");
     }
 
     // Reset le contenu des player pref

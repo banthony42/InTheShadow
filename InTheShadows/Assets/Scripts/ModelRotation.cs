@@ -75,6 +75,7 @@ public class ModelRotation : MonoBehaviour
         {
             transform.position = initialPosition;
             transform.rotation = initialRotation;
+            target = null;
         }
         if (move && !_win && Input.GetMouseButtonDown(0))
         {

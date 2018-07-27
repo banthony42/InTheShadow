@@ -11,12 +11,11 @@ public class MenuButtonScript : MonoBehaviour
 
     private string sceneToLoad = "none";
     private AudioSource soundPlayer;
-    private bool mute;
-
+    private UnityEngine.UI.Text tmp;
     // Use this for initialization
     void Start()
     {
-        mute = false;
+        tmp = GetComponentInChildren<UnityEngine.UI.Text>();
         soundPlayer = GetComponent<AudioSource>();
         soundPlayer.volume = 0.1f;
     }
@@ -48,27 +47,26 @@ public class MenuButtonScript : MonoBehaviour
     public void muteSound()
     {
         Debug.Log("clic");
-        if (!mute)
-        {
-            AudioListener.volume = 0f;
-            UnityEngine.UI.Text tmp = GetComponentInChildren<UnityEngine.UI.Text>();
-            if (tmp)
-                tmp.color = new Color(0.5f, 0f, 0f, 1f);
-            mute = true;
-        }
-        else if (mute)
-        {
-            AudioListener.volume = 1f;
-            UnityEngine.UI.Text tmp = GetComponentInChildren<UnityEngine.UI.Text>();
-            if (tmp)
-                tmp.color = new Color(1f, 1f, 1f, 1f);
-            mute = false;
-        }
+        if (UserSave.userP.getMute() == false)
+            UserSave.userP.setMute(1);
+        else if (UserSave.userP.getMute())
+            UserSave.userP.setMute(0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (UserSave.userP.getMute() && this.name == "SoundButton")
+        {
+                tmp.color = new Color(0.5f, 0f, 0f, 1f);
+                AudioListener.volume = 0f;
+        }
+        else if (this.name == "SoundButton")
+        {
+                tmp.color = new Color(1f, 1f, 1f, 1f);
+                AudioListener.volume = 1f;
+        }
+
         if (sceneToLoad != "none" && soundPlayer.time > 1.3f)
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
     }

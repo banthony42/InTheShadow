@@ -40,6 +40,8 @@ public class GameController : MonoBehaviour {
             sceneToLoad = "LevelSelect";
         }
 
+        // To fix: replay litlle sound when it was already play
+
         if ((model1 && model1.win) || (model2 && model2.win))
         {
             if (firstWin == false)
