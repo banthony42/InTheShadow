@@ -46,7 +46,6 @@ public class MenuButtonScript : MonoBehaviour
 
     public void muteSound()
     {
-        Debug.Log("clic");
         if (UserSave.userP.getMute() == false)
             UserSave.userP.setMute(1);
         else if (UserSave.userP.getMute())

@@ -88,9 +88,8 @@ public class ModelRotation : MonoBehaviour
                         target = hit.collider.transform;
                 }
         }
-        if (checkWin() && !_win)
-            _win = true;
-        else if (!_win && Input.GetMouseButton(0))
+        _win = checkWin();
+        if (!_win && Input.GetMouseButton(0))
         {
             if (move && Input.GetKey(KeyCode.LeftShift))
                 target.Translate(Vector3.up * Input.GetAxis("Mouse Y") * Time.deltaTime * moveSpeed, Space.World);

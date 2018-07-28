@@ -40,25 +40,23 @@ public class GameController : MonoBehaviour {
             sceneToLoad = "LevelSelect";
         }
 
-        // To fix: replay litlle sound when it was already play
-
         if ((model1 && model1.win) || (model2 && model2.win))
         {
             if (firstWin == false)
             {
-                player.PlayOneShot(winSound, 0.1f);
+                player.PlayOneShot(winSound, 0.2f);
                 firstWin = true;
             }
         }
         else if ((model1 && !model1.win) || (model2 && !model2.win))
             firstWin = false;
+        
         if (model1.win && winSoundTrig == false)
         {
             if (!model2 || model2 && model2.win)
             {
                 if (UserSave.userP.getDebug() == false)
                 {
-                    Debug.Log("debug win");
                     UserSave.userP.setState(model1.currentLevel, 1);
                     if (model2)
                         UserSave.userP.setState(model2.currentLevel, 1);
